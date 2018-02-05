@@ -28,6 +28,7 @@ IF_SYSDISK = False
 IF_HIDENFILE = True
 #if copy the files that is hiden
 
+
 def main():
     try:
         os.mkdir('Copyfile')
@@ -39,14 +40,15 @@ def main():
             Drives.remove('C:\\')
     print(Drives)
     for dirPath in Drives:
-        files = pathop.getfilebysuffix(dirPath,types)
+        files = pathop.getfileby_suffix(dirPath,types)
     try:
         for file in files:
             shutil.copy(file,'.\\Copyfile')
+            pass
     except:
         print('Maby something wrong')
     if not IF_HIDENFILE:
-        pathop.delhidenfile('.\\Copyfile')
+        pathop.del_hidenfile('.\\Copyfile')
     
 if __name__ == '__main__':
     main()
