@@ -30,7 +30,7 @@ IF_HIDENFILE = True
 
 def filter_file(path,filename):
     if os.path.splitext(filename)[1] in types:
-        if pathop.get_filesize(os.path.join(path,filename)) > 1024*5:
+        if pathop.get_filesize(os.path.join(path,filename)) > 1024*50:
             return True
     return False
 
@@ -44,11 +44,17 @@ def main():
         if 'C:\\' in Drives:
             Drives.remove('C:\\')
     print(Drives)
+    files = []
     for dirPath in Drives:
-        files = pathop.getfileby_func(dirPath,filter_file)
+        print('{}:\nGetting the files...'.format(dirPath))
+        files.extend(pathop.getfileby_func(dirPath,filter_file))
+    num = len(files)
+    count = 0
     try:
         for file in files:
             shutil.copy(file,'.\\Copyfile')
+            print(r'{:<20d}/{}'.format(count,num))
+            count += 1
             pass
     except:
         print('Maby something wrong')
