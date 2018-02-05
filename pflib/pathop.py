@@ -17,7 +17,7 @@ def getallfile(dirPath):
             file_all.append(os.path.join(dirpath, file))
     return file_all
 
-def getallfileby_func(dirPath,func=lambda r,f:True):
+def getfileby_func(dirPath,func=lambda r,f:True):
     '''
     func is a function that defined by you to filter the file
     you wanted to operate

