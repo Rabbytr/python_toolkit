@@ -13,7 +13,7 @@ try:
     import win32file
 except ImportError as e:
     print(e)
-    print('Please ensure the package pypiwin32 is not installed')
+    print('The package pypiwin32 is not installed')
     print('Please install that by type "pip install pypiwin32"')
     os._exit(-1)
 
