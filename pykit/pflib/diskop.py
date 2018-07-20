@@ -7,7 +7,17 @@ Some function to get the hard drive letter
 
 __author__ = 'Rabbyt'
 
-import win32file
+import os
+
+try:
+    import win32file
+except ImportError as e:
+    print(e)
+    print('Please ensure the package pypiwin32 is not installed')
+    print('Please install that by type "pip install pypiwin32"')
+    os._exit(-1)
+
+
   
 def getdisk():  
     drives = []  
