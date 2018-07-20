@@ -15,11 +15,11 @@ import os
 import shutil
 
 try:
-    from pflib import diskop,pathop
+    from pykit.pflib import diskop,pathop
 except ImportError as e:
     print(e)
-    print('Please ensure the package pflib is existed')
-    os._exit()
+    print('Please ensure the package pykit is existed')
+    os._exit(-1)
 
 types = ['.jpg','.png']
 #types is the suffixes of files u want to copy
