@@ -15,7 +15,7 @@ import os
 import shutil
 
 try:
-    from pykit.pflib import diskop,pathop
+    from pykit import diskop,pathop
 except ImportError as e:
     print(e)
     print('Please ensure the package pykit is existed')
