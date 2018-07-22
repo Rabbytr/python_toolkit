@@ -1,6 +1,12 @@
 import sys
 sys.path.append('../pykit')
-import diskop
+import diskop,pathop
 
-print(diskop.getdisk())
+
+def fun(dirpath,file):
+    if file[-4:] == '.mp3':
+        return True
+    return False
+
+print(pathop.get_filesize(r'D:\QQ\MobileFile'))
 
